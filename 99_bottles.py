@@ -1,5 +1,47 @@
-def bottle_song():
-	# write your code here!
+def bottle_song(start):
+    """
+    This function sings the bottle song by printing to the console:
+        99 bottles of beer on the wall, 99 bottles of beer.
+        Take one down and pass it around, 98 bottles of beer on the wall.
+        98 bottles of beer on the wall, 98 bottles of beer.
+        Take one down and pass it around, 97 bottles of beer on the wall.
+        97 bottles of beer on the wall, 97 bottles of beer.
+        Take one down and pass it around, 96 bottles of beer on the wall.
+        96 bottles of beer on the wall, 96 bottles of beer.
+        Take one down and pass it around, 95 bottles of beer on the wall.
+        95 bottles of beer on the wall, 95 bottles of beer.
+        Take one down and pass it around, 94 bottles of beer on the wall.
+        94 bottles of beer on the wall, 94 bottles of beer.
+        Take one down and pass it around, 93 bottles of beer on the wall.
+        93 bottles of beer on the wall, 93 bottles of beer.
+        Take one down and pass it around, 92 bottles of beer on the wall.
+        92 bottles of beer on the wall, 92 bottles of beer.
+        Take one down and pass it around, 91 bottles of beer on the wall.
+        91 bottles of beer on the wall, 91 bottles of beer.
+        Take one down and pass it around, 90 bottles of beer on the wall.
+        ...
+        ...
+        ...
+        Take one down and pass it around, 1 bottle of beer on the wall.
+        1 bottle of beer on the wall, 1 bottle of beer.
+        Take one down and pass it around, no more bottles of beer on the wall.
+        No more bottles of beer on the wall, no more bottles of beer.
+        Go to the store and buy some more, 99 bottles of beer on the wall.
+    """
+
+    for n in range(start, 0, -1):
+        print(f"{n} bottle{'s' * (n != 1)} of beer on the wall, {n} bottle{'s' * (n != 1)} of beer.")
+        print(f"Take one down and pass it around, {n - 1} bottle{'s' * (n - 1 != 1)} of beer on the wall.")
+
+    print(f"No more bottles of beer on the wall, no more bottles of beer.")
+    print(f"Go to the store and buy some more, {start} bottles of beer on the wall.")
 
 
-bottle_song()
+def main():
+    """This program sings the bottles song starting with 99 bottles of beer."""
+
+    bottle_song(99)
+
+
+if __name__ == "__main__":
+    main()
