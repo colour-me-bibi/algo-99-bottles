@@ -1,4 +1,12 @@
-def bottle_song(start):
+
+
+def pluralize(n, word):
+    """This function returns the pluralized version of a word if n is not 1."""
+
+    return f"{n} {word}{'s' * (n != 1)}"
+
+
+def bottle_song():
     """
     This function sings the bottle song by printing to the console:
         99 bottles of beer on the wall, 99 bottles of beer.
@@ -29,18 +37,32 @@ def bottle_song(start):
         Go to the store and buy some more, 99 bottles of beer on the wall.
     """
 
-    for n in range(start, 0, -1):
-        print(f"{n} bottle{'s' * (n != 1)} of beer on the wall, {n} bottle{'s' * (n != 1)} of beer.")
-        print(f"Take one down and pass it around, {n - 1} bottle{'s' * (n - 1 != 1)} of beer on the wall.")
+    for n_bottles in range(99, 0, -1):
+        print(f"{pluralize(n_bottles, 'bottle')} of beer on the wall, {pluralize(n_bottles, 'bottle')} of beer.")
+        print(f"Take one down and pass it around, {pluralize(n_bottles - 1, 'bottle')} of beer on the wall.")
 
     print(f"No more bottles of beer on the wall, no more bottles of beer.")
-    print(f"Go to the store and buy some more, {start} bottle{'s' * (start != 1)} of beer on the wall.")
+    print(f"Go to the store and buy some more, 99 bottles of beer on the wall.")
+
+
+def recursive_bottle_song(n_bottles):
+    """This program recursively sings the bottles song starting with 99 bottles of beer."""
+
+    if n_bottles == 0:
+        print("No more bottles of beer on the wall, no more bottles of beer.")
+        print("Go to the store and buy some more, 99 bottles of beer on the wall.")
+        return
+
+    print(f"{pluralize(n_bottles, 'bottle')} of beer on the wall, {pluralize(n_bottles, 'bottle')} of beer.")
+    print(f"Take one down and pass it around, {pluralize(n_bottles - 1, 'bottle')} of beer on the wall.")
+    recursive_bottle_song(n_bottles - 1)
 
 
 def main():
     """This program sings the bottles song starting with 99 bottles of beer."""
 
-    bottle_song(99)
+    bottle_song()
+    # recursive_bottle_song()
 
 
 if __name__ == "__main__":
