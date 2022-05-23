@@ -34,7 +34,7 @@ def bottle_song(start):
         print(f"Take one down and pass it around, {n - 1} bottle{'s' * (n - 1 != 1)} of beer on the wall.")
 
     print(f"No more bottles of beer on the wall, no more bottles of beer.")
-    print(f"Go to the store and buy some more, {start} bottles of beer on the wall.")
+    print(f"Go to the store and buy some more, {start} bottle{'s' * (start != 1)} of beer on the wall.")
 
 
 def main():
